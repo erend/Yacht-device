@@ -1,5 +1,4 @@
-// const spi = require('spi-device');
-import spi from 'spi-device';
+const spi = require('spi-device');
 
 // The MCP3008 is on bus 0 and it's device 0
 const RS485 = spi.open(0, 0, err => {
