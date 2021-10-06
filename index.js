@@ -10,7 +10,7 @@ const RS485 = spi.open(0, 0, err => {
   //   speedHz: 20000 // Use a low bus speed to get a good reading from the TMP36
   // }];
   const message = [{
-    sendBuffer: Buffer.aloc(10, 0x00), 
+    sendBuffer: Buffer.alloc(10, 0x00), 
     receiveBuffer: Buffer.alloc(10),              // Raw data read from channel 5
     byteLength: 10,
   }];
