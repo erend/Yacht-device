@@ -17,10 +17,10 @@ const RS485 = spi.open(0, 0, err => {
 
   if (err) throw err;
 
-  RS485.transfer(message, (err, message) => {
+  RS485.transfer(message, (err, msg) => {
     if (err) throw err;
 
 
-    console.log('recived', message);
+    console.log('recived', msg);
   });
 });
