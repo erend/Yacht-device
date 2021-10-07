@@ -25,7 +25,7 @@ const RS485_00 = spi.open(0, 0, err => {
   });
 });
 
-const RS485_00 = spi.open(0, 1, err => {
+const RS485_01 = spi.open(0, 1, err => {
   // An SPI message is an array of one or more read+write transfers
   const message = [{
     sendBuffer: Buffer.from([0x01, 0xd0, 0x00]), // Sent to read channel 5
@@ -41,7 +41,7 @@ const RS485_00 = spi.open(0, 1, err => {
 
   if (err) throw err;
 
-  RS485_00.transfer(message, (err, msg) => {
+  RS485_01.transfer(message, (err, msg) => {
     if (err) throw err;
 
 
