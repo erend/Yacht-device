@@ -6,6 +6,7 @@
   "author": "Gleb Andreev <gleb.erend@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "rpi-gpio": "^2.1.7",
     "spi-device": "^3.1.2"
   }
 }
