@@ -18,7 +18,7 @@ function read() {
     // read the 2 registers starting at address 5
     // on device number 1.
     console.log('try to read');
-    client.readHoldingRegisters(0x0000, 2)
+    client.readHoldingRegisters(0, 5)
         .then(console.log);
 }
 
