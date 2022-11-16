@@ -22,6 +22,6 @@ function read() {
     // console.log('now id:', client.getID());
     // client.readHoldingRegisters(0, 5)
     //     .then(console.log);
-    client.writeFC3 (2, 0x0000, 10, console.log);
+    client.writeFC3 (2, 0x1000, 8, console.log);
 }
 
