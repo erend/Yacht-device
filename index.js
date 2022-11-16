@@ -3,7 +3,7 @@ const ModbusRTU = require("modbus-serial");
 const client = new ModbusRTU();
 
 // open connection to a serial port
-client.connectRTUBuffered("/dev/ttySC0", { baudRate: 9600 }, read);
+client.connectRTUBuffered("/dev/ttySC0", { baudRate: 9600 });
 
 function write() {
     client.setID(1);
@@ -20,3 +20,5 @@ function read() {
     client.readHoldingRegisters(5, 2)
         .then(console.log);
 }
+
+read();
