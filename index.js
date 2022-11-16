@@ -26,7 +26,7 @@ function read() {
     for (let index = 0; index < 10; index++) {
         try {
             console.log('try to read, index:', index);
-            client.writeFC3 (index, 0x1000, 8, console.log);
+            client.writeFC3 (index, 0x1000, 8, (err, data) => {console.log('err', err); console.log('data', data)});
         } catch (error) {
             console.log('error!', error);
         }
