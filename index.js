@@ -3,7 +3,7 @@ const ModbusRTU = require("modbus-serial");
 const client = new ModbusRTU();
 
 // open connection to a serial port
-client.connectRTU("/dev/ttySC0", { baudRate: 9600 }, read);
+client.connectRTUBuffered("/dev/ttySC0", { baudRate: 9600 }, read);
 
 function write() {
     client.setID(1);
@@ -17,11 +17,18 @@ function write() {
 function read() {
     // read the 2 registers starting at address 5
     // on device number 1.
-    console.log('try to read, id:', client.getID());
+    console.log('try to read, isOpen:', client.isOpen());
     // client.setID(2);
     // console.log('now id:', client.getID());
     // client.readHoldingRegisters(0, 5)
     //     .then(console.log);
     client.writeFC3 (2, 0x1000, 8, console.log);
+    for (let index = 0; index < 10; index++) {
+        try {
+            client.writeFC3 (index, 0x1000, 8, console.log);
+        } catch (error) {
+            console.log('error!', error);
+        }
+    }
 }
 
