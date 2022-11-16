@@ -17,7 +17,7 @@ function write() {
 function read() {
     // read the 2 registers starting at address 5
     // on device number 1.
-    console.log('try to read, isOpen:', client.isOpen());
+    console.log('try to read, id:', client.getId());
     // client.setID(2);
     // console.log('now id:', client.getID());
     // client.readHoldingRegisters(0, 5)
