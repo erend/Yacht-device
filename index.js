@@ -15,7 +15,7 @@ function write() {
 }
 
 function read() {
-    client.setID(1);
+    client.setID(2);
 
     // set a timout for requests default is null (no timeout)
     client.setTimeout(500)
