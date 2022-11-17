@@ -19,7 +19,7 @@ async function read() {
 
     console.log('id: ', client.getID());
 
-    client.writeFC3 (2, 1, 1, (err, data) => {console.log('data[0]: ',data);});
+    client.writeFC3 (2, 0x1000, 1, (err, data) => {console.log('data[0]: ',data);});
     // client.writeFC3 (1, 1, 1, (err, data) => {console.log('data[0]: ',data);})
 
     // set a timout for requests default is null (no timeout)
