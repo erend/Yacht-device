@@ -23,17 +23,20 @@ function read() {
     // client.readHoldingRegisters(0, 5)
     //     .then(console.log);
     // client.writeFC3(2, 0x1000, 8, console.log);
-    try {
-        console.log('try to read');
-        client.writeFC3 (2, 0, 16, (err, data) => {
-           if(!err) {
-            console.log('data', data.data);
-            read();
-           }
+    while (true) {
+        try {
+            console.log('try to read');
+            client.writeFC3 (2, 0, 16, (err, data) => {
+                if(!err) {
+                console.log('data', data.data);
+                read();
+                }
 
-        });
-    } catch (error) {
-        console.log('error!', error);
+            });
+        } catch (error) {
+            console.log('error!', error);
+        }  
     }
+    
 }
 
