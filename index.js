@@ -15,6 +15,8 @@ function write() {
 }
 
 function read() {
+    client.setID(2);
+
     // read the 2 registers starting at address 5
     // on device number 1.
     // console.log('id:', client.getID());
@@ -23,11 +25,13 @@ function read() {
     // client.readHoldingRegisters(0, 5)
     //     .then(console.log);
     // client.writeFC3(2, 0x1000, 8, console.log);
+
     const forLoop = async () => {
         console.log('Start')
       
         for (let index = 0; 100; index++) {
-          const data = await client.writeFC3 (2, 0, 16, (err, data))
+        //   const data = await client.writeFC3 (2, 0, 16, (err, data))
+        const data = client.readHoldingRegisters (0, 8);
           console.log('data', data.data);
         }
       
@@ -35,19 +39,7 @@ function read() {
       }
 
     forLoop();
-    // while (true) {
-    //     try {
-    //         console.log('try to read');
-    //         client.writeFC3 (2, 0, 16, (err, data) => {
-    //             if(!err) {
-    //             console.log('data', data.data);
-    //             }
 
-    //         });
-    //     } catch (error) {
-    //         console.log('error!', error);
-    //     }  
-    // }
     
 }
 
