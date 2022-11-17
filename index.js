@@ -24,7 +24,7 @@ function read() {
     //     .then(console.log);
     // client.writeFC3(2, 0x1000, 8, console.log);
     try {
-        console.log('try to read, index:', index);
+        console.log('try to read');
         client.writeFC3 (2, 0, 16, (err, data) => {console.log('err', err); console.log('data', data)});
     } catch (error) {
         console.log('error!', error);
