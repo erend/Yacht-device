@@ -15,9 +15,11 @@ function write() {
 }
 
 async function read() {
-    await client.setID(2);
+    // await client.setID(2);
 
     console.log('id: ', client.getID());
+
+    client.writeFC3 (2, 0, 1, (err, data) => {console.log('data: ',data);})
 
     // set a timout for requests default is null (no timeout)
     // client.setTimeout(500);
@@ -37,25 +39,25 @@ async function read() {
     //   }
 
     // Direction
-    const forLoop = async () => {
-        console.log('Start')
+    // const forLoop = async () => {
+    //     console.log('Start')
         
-        for (let index = 0; 100; index++) {
-            //   const data = await client.writeFC3 (2, 0, 16, (err, data))
-            const data = await client.readHoldingRegisters (0, 1);
-            try {
-                const data = await client.readHoldingRegisters (0, 1);
-                console.log('Direction: ', data.data[0]);
-                console.log('Buffer: ', data.buffer);
-            } catch (error) {
-                console.log('error', error);
-            }        
-        }
+    //     for (let index = 0; 100; index++) {
+    //         //   const data = await client.writeFC3 (2, 0, 16, (err, data))
+    //         const data = await client.readHoldingRegisters (0, 1);
+    //         try {
+    //             const data = await client.readHoldingRegisters (0, 1);
+    //             console.log('Direction: ', data.data[0]);
+    //             console.log('Buffer: ', data.buffer);
+    //         } catch (error) {
+    //             console.log('error', error);
+    //         }        
+    //     }
         
-        console.log('End')
-    }
+    //     console.log('End')
+    // }
 
-    forLoop();
+    // forLoop();
 
     
 }
