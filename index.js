@@ -67,7 +67,7 @@ async function read() {
     //     console.log('End')
     // }
 
-    // forLoop();
+    forLoop();
 
     
 }
