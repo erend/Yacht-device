@@ -15,7 +15,9 @@ function write() {
 }
 
 async function read() {
-    // await client.setID(2);
+    await client.setID(2);
+
+    console.log('id: ', client.getID());
 
     // set a timout for requests default is null (no timeout)
     // client.setTimeout(500);
