@@ -14,11 +14,11 @@ function write() {
         .then(read);
 }
 
-function read() {
-    client.setID(2);
+async function read() {
+    await client.setID(2);
 
     // set a timout for requests default is null (no timeout)
-    client.setTimeout(500)
+    // client.setTimeout(500);
 
     // Speed
     // const forLoop = async () => {
