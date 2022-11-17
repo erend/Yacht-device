@@ -34,7 +34,7 @@ async function read() {
     // set a timout for requests default is null (no timeout)
     // client.setTimeout(500);
 
-    Speed
+    //Speed
     const forLoop = async () => {
         console.log('Start')
       
