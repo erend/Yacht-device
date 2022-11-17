@@ -17,7 +17,7 @@ function write() {
 function read() {
     // read the 2 registers starting at address 5
     // on device number 1.
-    console.log('id:', client.getID());
+    // console.log('id:', client.getID());
     // client.setID(2);
     // console.log('now id:', client.getID());
     // client.readHoldingRegisters(0, 5)
@@ -25,7 +25,13 @@ function read() {
     // client.writeFC3(2, 0x1000, 8, console.log);
     try {
         console.log('try to read');
-        client.writeFC3 (2, 0, 16, (err, data) => {console.log('err', err); console.log('data', data)});
+        client.writeFC3 (2, 0, 16, (err, data) => {
+           if(!err) {
+            console.log('data', data.data);
+            read();
+           }
+
+        });
     } catch (error) {
         console.log('error!', error);
     }
