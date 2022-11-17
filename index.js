@@ -15,11 +15,20 @@ function write() {
 }
 
 async function read() {
-    // await client.setID(2);
+    await client.setID(2);
 
     console.log('id: ', client.getID());
 
-    client.writeFC3 (2, 0x1000, 1, (err, data) => {console.log('data[0]: ',data);});
+    // client.writeFC3 (2, 0x1000, 1, (err, data) => {console.log('data[0]: ',data);});
+
+    try {
+        const data = await client.readHoldingRegisters (0, 1);
+        console.log('Direction: ', data.data[0]);
+        console.log('Buffer: ', data.buffer);
+    } catch (error) {
+        console.log('error', error);
+    }   
+
     // client.writeFC3 (1, 1, 1, (err, data) => {console.log('data[0]: ',data);})
 
     // set a timout for requests default is null (no timeout)
@@ -45,7 +54,7 @@ async function read() {
         
     //     for (let index = 0; 100; index++) {
     //         //   const data = await client.writeFC3 (2, 0, 16, (err, data))
-    //         const data = await client.readHoldingRegisters (0, 1);
+    //         // const data = await client.readHoldingRegisters (0, 1);
     //         try {
     //             const data = await client.readHoldingRegisters (0, 1);
     //             console.log('Direction: ', data.data[0]);
