@@ -15,7 +15,10 @@ function write() {
 }
 
 function read() {
-    client.setID(2);
+    client.setID(1);
+
+    // set a timout for requests default is null (no timeout)
+    client.setTimeout(500)
 
     // read the 2 registers starting at address 5
     // on device number 1.
@@ -32,7 +35,7 @@ function read() {
         for (let index = 0; 100; index++) {
         //   const data = await client.writeFC3 (2, 0, 16, (err, data))
         const data = client.readHoldingRegisters (0, 8);
-          console.log('data', data.data);
+          console.log('data', data);
         }
       
         console.log('End')
