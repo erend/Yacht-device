@@ -39,10 +39,15 @@ function read() {
         console.log('Start')
         
         for (let index = 0; 100; index++) {
-        //   const data = await client.writeFC3 (2, 0, 16, (err, data))
-        const data = await client.readHoldingRegisters (0, 1);
-        console.log('Direction: ', data.data[0]);
-        console.log('Buffer: ', data.buffer);
+            //   const data = await client.writeFC3 (2, 0, 16, (err, data))
+            const data = await client.readHoldingRegisters (0, 1);
+            try {
+                const data = await client.readHoldingRegisters (0, 1);
+                console.log('Direction: ', data.data[0]);
+                console.log('Buffer: ', data.buffer);
+            } catch (error) {
+                console.log('error', error);
+            }        
         }
         
         console.log('End')
