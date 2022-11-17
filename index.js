@@ -39,7 +39,7 @@ async function read() {
         console.log('Start')
       
         for (let index = 0; 100; index++) {
-        const data = await client.readHoldingRegisters (0x1000, 1);
+        const data = await client.readHoldingRegisters (0, 1);
             console.log('data: ', data);
             console.log('Wind speed: ', data.data[0] / 10);
             console.log('Buffer: ', data.buffer);
