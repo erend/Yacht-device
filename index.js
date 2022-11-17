@@ -23,19 +23,31 @@ function read() {
     // client.readHoldingRegisters(0, 5)
     //     .then(console.log);
     // client.writeFC3(2, 0x1000, 8, console.log);
-    while (true) {
-        try {
-            console.log('try to read');
-            client.writeFC3 (2, 0, 16, (err, data) => {
-                if(!err) {
-                console.log('data', data.data);
-                }
+    const forLoop = async () => {
+        console.log('Start')
+      
+        for (let index = 0; 100; index++) {
+          const data = await client.writeFC3 (2, 0, 16, (err, data))
+          console.log('data', data.data);
+        }
+      
+        console.log('End')
+      }
 
-            });
-        } catch (error) {
-            console.log('error!', error);
-        }  
-    }
+    forLoop();
+    // while (true) {
+    //     try {
+    //         console.log('try to read');
+    //         client.writeFC3 (2, 0, 16, (err, data) => {
+    //             if(!err) {
+    //             console.log('data', data.data);
+    //             }
+
+    //         });
+    //     } catch (error) {
+    //         console.log('error!', error);
+    //     }  
+    // }
     
 }
 
