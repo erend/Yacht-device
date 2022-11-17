@@ -29,7 +29,6 @@ function read() {
             client.writeFC3 (2, 0, 16, (err, data) => {
                 if(!err) {
                 console.log('data', data.data);
-                read();
                 }
 
             });
