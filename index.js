@@ -34,7 +34,7 @@ function read() {
       
         for (let index = 0; 100; index++) {
         //   const data = await client.writeFC3 (2, 0, 16, (err, data))
-        const data = client.readHoldingRegisters (0, 8);
+        const data = await client.readHoldingRegisters (0, 8);
           console.log('data', data);
         }
       
