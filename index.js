@@ -36,6 +36,7 @@ function read() {
         //   const data = await client.writeFC3 (2, 0, 16, (err, data))
         const data = await client.readHoldingRegisters (0, 1);
           console.log('Wind speed: ', data.data[0] / 10);
+          console.log('Buffer: ', data.buffer);
         }
       
         console.log('End')
