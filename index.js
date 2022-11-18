@@ -3,7 +3,7 @@ const ModbusRTU = require("modbus-serial");
 const client = new ModbusRTU();
 
 // open connection to a serial port
-client.connectRTUBuffered("/dev/ttySC0", { baudRate: 9600 }, read);
+client.connectRTUBuffered("/dev/ttySC0", { baudRate: 4800 }, read);
 
 function write() {
     client.setID(1);
@@ -35,37 +35,37 @@ async function read() {
     // client.setTimeout(500);
 
     //Speed
-    const forLoop = async () => {
-        console.log('Start')
-      
-        for (let index = 0; 100; index++) {
-        const data = await client.readHoldingRegisters (0, 1);
-            console.log('data: ', data);
-            console.log('Wind speed: ', data.data[0] / 10);
-            console.log('Buffer: ', data.buffer);
-        }
-      
-        console.log('End')
-      }
-
-    // Direction
     // const forLoop = async () => {
     //     console.log('Start')
-        
+      
     //     for (let index = 0; 100; index++) {
-    //         //   const data = await client.writeFC3 (2, 0, 16, (err, data))
-    //         // const data = await client.readHoldingRegisters (0, 1);
-    //         try {
-    //             const data = await client.readHoldingRegisters (0, 1);
-    //             console.log('Direction: ', data.data[0]);
-    //             console.log('Buffer: ', data.buffer);
-    //         } catch (error) {
-    //             console.log('error', error);
-    //         }        
+    //     const data = await client.readHoldingRegisters (0, 1);
+    //         console.log('data: ', data);
+    //         console.log('Wind speed: ', data.data[0] / 10);
+    //         console.log('Buffer: ', data.buffer);
     //     }
-        
+      
     //     console.log('End')
-    // }
+    //   }
+
+    Direction
+    const forLoop = async () => {
+        console.log('Start')
+        
+        for (let index = 0; 100; index++) {
+            //   const data = await client.writeFC3 (2, 0, 16, (err, data))
+            // const data = await client.readHoldingRegisters (0, 1);
+            try {
+                const data = await client.readHoldingRegisters (0, 1);
+                console.log('Direction: ', data.data[0]);
+                console.log('Buffer: ', data.buffer);
+            } catch (error) {
+                console.log('error', error);
+            }        
+        }
+        
+        console.log('End')
+    }
 
     forLoop();
 
