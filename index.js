@@ -35,18 +35,18 @@ async function read() {
     // client.setTimeout(500);
 
     //Speed
-    // const forLoop = async () => {
-    //     console.log('Start')
+    const forLoop = async () => {
+        console.log('Start')
       
-    //     for (let index = 0; 100; index++) {
-    //     const data = await client.readHoldingRegisters (0, 1);
-    //         console.log('data: ', data);
-    //         console.log('Wind speed: ', data.data[0] / 10);
-    //         console.log('Buffer: ', data.buffer);
-    //     }
+        for (let index = 0; 100; index++) {
+        const data = await client.readHoldingRegisters (0, 1);
+            console.log('data: ', data);
+            console.log('Wind speed: ', data.data[0] / 10);
+            console.log('Buffer: ', data.buffer);
+        }
       
-    //     console.log('End')
-    //   }
+        console.log('End')
+      }
 
     //Direction
     // const forLoop = async () => {
@@ -67,7 +67,7 @@ async function read() {
     //     console.log('End')
     // }
 
-    // forLoop();
+    forLoop();
 
     
 }
