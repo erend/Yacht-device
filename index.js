@@ -48,7 +48,7 @@ async function read() {
     //     console.log('End')
     //   }
 
-    Direction
+    //Direction
     const forLoop = async () => {
         console.log('Start')
         
